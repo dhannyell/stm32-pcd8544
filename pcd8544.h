@@ -155,7 +155,7 @@ static const unsigned char ASCII[][5] =
 	,{0x07, 0x08, 0x70, 0x08, 0x07} // 59 Y
 	,{0x61, 0x51, 0x49, 0x45, 0x43} // 5a Z
 	,{0x00, 0x7f, 0x41, 0x41, 0x00} // 5b [
-	,{0x02, 0x04, 0x08, 0x10, 0x20} // 5c ¥
+	,{0x02, 0x04, 0x08, 0x10, 0x20} // 5c ï¿½
 	,{0x00, 0x41, 0x41, 0x7f, 0x00} // 5d ]
 	,{0x04, 0x02, 0x01, 0x02, 0x04} // 5e ^
 	,{0x40, 0x40, 0x40, 0x40, 0x40} // 5f _
@@ -280,5 +280,6 @@ void PCD8544_DrawRectangle(unsigned char x0, unsigned char y0, unsigned char x1,
 void PCD8544_DrawFilledRectangle(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, char color);
 void PCD8544_DrawCircle(char x0, char y0, char r, char color);
 void PCD8544_DrawFilledCircle(char x0, char y0, char r, char color);
-
+void PCD8544_LCDCharacter(char character);
+void PCD8544_LCDString(char *characters);
 #endif

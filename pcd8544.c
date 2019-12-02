@@ -544,3 +544,16 @@ void PCD8544_DrawFilledCircle(char x0, char y0, char r, char color) {
     }
 }
 
+void PCD8544_LCDCharacter(char character)
+{
+   unsigned int i;
+   LcdWrite(LCD_DATA, 0x00);                    //Blank vertical line padding
+   for (i = 0; i < 5; i++)   LcdWrite(LCD_DATA, ASCII[character - 0x20][i]);
+   LcdWrite(LCD_DATA, 0x00);                    //Blank vertical line padding
+}
+
+void PCD8544_LCDString(char *characters)               //Given a string of characters, one by one is passed to the LCD
+{
+   while (*characters)
+    LCDCharacter(*characters++);
+}
