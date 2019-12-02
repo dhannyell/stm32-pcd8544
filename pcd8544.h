@@ -282,4 +282,5 @@ void PCD8544_DrawCircle(char x0, char y0, char r, char color);
 void PCD8544_DrawFilledCircle(char x0, char y0, char r, char color);
 void PCD8544_LCDCharacter(char character);
 void PCD8544_LCDString(char *characters);
+void LcdClearBuffer(void);
 #endif

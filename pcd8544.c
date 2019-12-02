@@ -557,3 +557,9 @@ void PCD8544_LCDString(char *characters)               //Given a string of chara
    while (*characters)
     LCDCharacter(*characters++);
 }
+
+void LcdClearBuffer(void){
+	for (int i = 0; i<PCD8544_BUFFER_SIZE; i++){
+		PCD8544_Buffer[i] = 0;
+	}
+}
