@@ -215,7 +215,7 @@ unsigned char spi_soft(unsigned char dat)
 	 GPIO_InitStruct.Pin = DI|SCK;
  	 GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   	 GPIO_InitStruct.Pull = GPIO_NOPULL;
-  	 GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+  	 GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
  	 HAL_GPIO_Init(PCDPORT, &GPIO_InitStruct);
 	unsigned char cnt = 8;
 	while (cnt--) {
@@ -251,7 +251,7 @@ void LcdInitialise(void)
 	GPIO_InitStruct.Pin = DC|RST|CEE;
  	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   	GPIO_InitStruct.Pull = GPIO_NOPULL;
-  	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+  	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
  	HAL_GPIO_Init(PCDPORT, &GPIO_InitStruct);      
         
         
