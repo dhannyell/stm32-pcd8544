@@ -563,3 +563,17 @@ void LcdClearBuffer(void){
 		PCD8544_Buffer[i] = 0;
 	}
 }
+
+void drawLineH2(uint8_t x0, uint8_t x1, uint8_t y, uint8_t step)
+{
+  if(step>1) { if(((x0&1)==1 && (y&1)==0) || ((x0&1)==0 && (y&1)==1)) x0++; }
+  if(x1>x0) for(uint8_t x=x0; x<=x1; x+=step) PCD8544_DrawPixel(x,y,PCD8544_Pixel_Set);
+  else      for(uint8_t x=x1; x<=x0; x+=step) PCD8544_DrawPixel(x,y,PCD8544_Pixel_Set);
+}
+
+void drawLineV2(int x, int y0, int y1, int step)
+{
+  if(step>1) { if(((x&1)==1 && (y0&1)==0) || ((x&1)==0 && (y0&1)==1)) y0++; }
+  if(y1>y0)for(int y=y0; y<=y1; y+=step) PCD8544_DrawPixel(x,y,PCD8544_Pixel_Set);
+  else     for(int y=y1; y<=y0; y+=step) PCD8544_DrawPixel(x,y,PCD8544_Pixel_Set);
+}
