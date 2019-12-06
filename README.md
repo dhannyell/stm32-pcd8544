@@ -1,5 +1,5 @@
 #STM32-PCD8544
-### PCD8544 HAL library with farsi font for stm32. this library suport direct type farsi in ide
+### PCD8544 HAL library with farsi font for stm32. this library suport direct type farsi in ide. compatible with stm32f0
 
 ### How to Use
 - include the functions
@@ -27,4 +27,4 @@ LcdInitialise();
 LcdClear();
 ```
 
-##### usage examples are in the example folder
+##### usage examples are in the example folder. note that the example uses stm32f1xx
